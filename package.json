@@ -1,5 +1,5 @@
 {
-  "name": "bookmart",
+  "name": "alpaca",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -82,8 +82,5 @@
     "not ie <= 11",
     "Firefox ESR"
   ],
-  "dependencies": {
-    "scroll-lock": "2.1.5",
-    "swiper": "11.1.9"
-  }
+  "dependencies": {}
 }

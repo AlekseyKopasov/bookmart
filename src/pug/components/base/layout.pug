@@ -10,26 +10,12 @@ html(lang="ru")
     meta(charset="utf-8")
     meta(content="width=device-width, initial-scale=1.0", name="viewport")
     meta(content="ie=edge", http-equiv="X-UA-Compatible")
-    meta(content="Bookmart", name="description")
+    meta(content="alpaca", name="description")
 
-    //- link(rel="stylesheet", href="/css/style.min.css")
     link(href="/scss/style.scss", rel="stylesheet")
 
-    if inlineStyles
-      each path in inlineStyles
-        link(href=path, rel="stylesheet")
+  body
+    +header(currentUrl)
 
-  body(class=bodyMods)
-    .wrapper(class=wrapperMods)
-      if (hasHeader)
-        +header(headerMods, currentUrl)
-
-      block main
-
-      if (hasFooter)
-        +footer(footerMods)
-
-    script(src="/ts/vendor.ts", type="module")
-    script(src="/ts/chunks/base.ts", type="module")
-
-    block scripts
+  block main
+  block scripts

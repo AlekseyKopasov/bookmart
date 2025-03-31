@@ -37,19 +37,12 @@ export default defineConfig(({ command }) => {
       pages(isDev),
       chunkSplitPlugin({
         strategy: 'default',
-        customSplitting: {
-          vendor: [/src\/ts\/vendor/],
-          base: [/src\/ts\/chunks\/base/],
-          // 'sliders': [ /src\/ts\/chunks\/sliders/ ],
-          // 'accordions': [ /src\/ts\/chunks\/accordions/ ],
-          // Any file that includes `utils` in src dir will be bundled in the `utils` chunk
-          // 'utils': [/src\/ts\/utils/]
-        },
+        customSplitting: {},
       }),
     ],
 
     optimizeDeps: {
-      include: ['tippy.js', 'scroll-lock', 'vanillajs-datepicker', 'accordion-js', 'swiper', 'swiper/modules'],
+      include: [],
     },
 
     publicDir,
@@ -70,7 +63,7 @@ export default defineConfig(({ command }) => {
       rollupOptions: {
         input: getRollupInput({ root, rootDir, port, pagesDir }, isDev),
       },
-      emptyOutDir: true,
+      emptyOutDir: false,
       cssMinify: true,
       minify: 'terser',
       terserOptions: {
@@ -81,7 +74,7 @@ export default defineConfig(({ command }) => {
 
     server: {
       port,
-      open: '/pug/pages/',
+      open: '/pug/pages/main/',
     },
 
     resolve: {
